@@ -1,5 +1,7 @@
 package reflection;
 
+import visitable.clean.*;
+
 /**
  * Visitors by visitor design pattern.
  *   - additional accept() methods in vistables
@@ -14,7 +16,7 @@ public class DemoReflection {
             new Print("Hello visitor!"),
             new Block(
                     new Comment("TODO: Write a code."),
-                    new PrintFancy("Goodbye visitor!")
+                    new PrintBold("Goodbye visitor!")
             )
     );
 

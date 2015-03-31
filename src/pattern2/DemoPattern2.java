@@ -1,5 +1,7 @@
 package pattern2;
 
+import visitable.accept.*;
+
 /**
  * Visitors by visitor design pattern.
  *   - additional accept() methods in vistables
@@ -10,16 +12,10 @@ package pattern2;
  */
 public class DemoPattern2 {
 
-    static Node prog = new Block(
-            new Print("Hello visitor!"),
-            new Block(
-                    new Comment("TODO: Write a code."),
-                    new PrintFancy("Goodbye visitor!")
-            )
-    );
-
     public static void main(String[] args) {
         System.out.println(DemoPattern2.class.getPackage().getName());
+
+        Node prog = DemoAST.prog;
 
         System.out.println("--------------");
         new Printer(prog).go();

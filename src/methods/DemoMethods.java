@@ -1,5 +1,7 @@
 package methods;
 
+import visitable.methods.*;
+
 /**
  * Visitors by dedicated methods.
  *   - must change the implementation of visitables
@@ -10,16 +12,10 @@ package methods;
  */
 public class DemoMethods {
 
-    static Node prog = new Block(
-            new Print("Hello visitor!"),
-            new Block(
-                    new Comment("TODO: Write a code."),
-                    new PrintFancy("Goodbye visitor!")
-            )
-    );
-
     public static void main(String[] args) {
         System.out.println(DemoMethods.class.getPackage().getName());
+
+        Node prog = DemoAST.prog;
 
         System.out.println("--------------");
         prog.print(0);

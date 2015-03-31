@@ -1,6 +1,4 @@
-package reflection;
-
-import visitable.clean.*;
+package visitable.accept;
 
 public interface Visitor {
 
@@ -13,7 +11,3 @@ public interface Visitor {
     void visit(Block block);
 
 }
-
-
-
-

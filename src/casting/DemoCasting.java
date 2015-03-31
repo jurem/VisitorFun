@@ -1,5 +1,7 @@
 package casting;
 
+import visitable.clean.*;
+
 /**
  * Visitors by instanceof and type casts.
  *   + no touching of visitables
@@ -11,32 +13,24 @@ package casting;
  */
 public class DemoCasting {
 
-    static Node prog = new Block(
-            new Print("Hello visitor!"),
-            new Block(
-                    new Comment("TODO: Write a code."),
-                    new PrintFancy("Goodbye visitor!")
-            )
-    );
-
     public static void main(String[] args) {
         System.out.println(DemoCasting.class.getPackage().getName());
 
-        Visitor visitor = new Visitor();
+        Node prog = DemoAST.prog;
 
         System.out.println("--------------");
-        visitor.print(0, prog);
+        Visitor.print(0, prog);
 
         System.out.println("--------------");
-        visitor.exec(prog);
+        Visitor.exec(prog);
 
         System.out.println("--------------");
-        System.out.println(visitor.size(prog));
+        System.out.println(Visitor.size(prog));
 
         System.out.println("--------------");
-        visitor.dump(prog);
+        Visitor.dump(prog);
         System.out.println();
-        visitor.dump(visitor.compile(prog));
+        Visitor.dump(Visitor.compile(prog));
         System.out.println();
 
     }

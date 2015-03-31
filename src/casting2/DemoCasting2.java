@@ -1,5 +1,7 @@
 package casting2;
 
+import visitable.clean.*;
+
 /**
  * TODO: write a short description
  *
@@ -7,16 +9,10 @@ package casting2;
  */
 public class DemoCasting2 {
 
-    static Node prog = new Block(
-            new Print("Hello visitor!"),
-            new Block(
-                    new Comment("TODO: Write a code."),
-                    new PrintFancy("Goodbye visitor!")
-            )
-    );
-
     public static void main(String[] args) {
         System.out.println(DemoCasting2.class.getPackage().getName());
+
+        Node prog = DemoAST.prog;
 
         System.out.println("--------------");
         new Printer(prog).go();
